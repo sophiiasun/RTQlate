@@ -2,8 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LogIn from './src/pages/Login';
-import Registration from './src/pages/Registration';
+import LogIn from './pages/LogIn';
+import Registration from './pages/Registration';
 import { useNavigation } from '@react-navigation/native';
 
 export default function App() {
