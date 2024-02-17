@@ -25,7 +25,10 @@ def summarize():
     max_tokens=200,
     top_p=1
   )
-  return completion.choices[0].message.content
+  content = completion.choices[0].message.content
+  bullet_points = content.replace("\n", "").split("- ")
+  bullet_points.pop(0)
+  return bullet_points
 
 @app.route('/submit',methods = ['POST'])
 def submit():
