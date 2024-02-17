@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import Landing from './pages/Landing';
 import Recorder from './pages/Recorder';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/recorder" element={<Recorder/>} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
