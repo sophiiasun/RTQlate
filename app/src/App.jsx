@@ -7,6 +7,7 @@ import Registration from './pages/auth/Registration';
 import Dashboard from './pages/Dashboard';
 import Landing from './pages/Landing';
 import Recorder from './pages/Recorder';
+import Results from './pages/Results';
 import Nav from './components/Nav';
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<LogIn/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/recorder" element={<Recorder/>} />
+        <Route path="/results" element={<Results/>} />
       </Routes>
     </BrowserRouter>
   );

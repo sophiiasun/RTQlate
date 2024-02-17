@@ -1,4 +1,5 @@
 from flask import Flask, request
+from flask_cors import CORS, cross_origin
 from openai import OpenAI
 import cv2
 from gaze_tracking import GazeTracking
@@ -15,6 +16,9 @@ client = OpenAI(api_key="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")
 
 gaze = None
 webcam = None
+
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/summarize", methods=['POST'])
 def summarize():
@@ -35,9 +39,13 @@ def summarize():
   bullet_points.pop(0)
   return bullet_points
 
-@app.route('/submit',methods = ['POST'])
+@app.route("/submit", methods=['POST'])
+@cross_origin()
 def submit():
-  with open(os.path.abspath("../recordings/YorkUniversity2.mp3") , "rb") as f:
+  request_data = request.get_json()
+  filename = request_data['filename']
+  print(os.path.abspath(f"../../../Downloads/{filename}"))
+  with open(os.path.abspath(f"../../../Downloads/{filename}") , "rb") as f:
     response = requests.post(base_url + "/upload", headers=headers, data=f)
 
   upload_url = response.json()["upload_url"]

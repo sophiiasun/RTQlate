@@ -1,9 +1,18 @@
 import React from "react";
 import vmsg from "vmsg";
+import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 const recorder = new vmsg.Recorder({
   wasmURL: "https://unpkg.com/vmsg@0.3.0/vmsg.wasm"
 });
+
+const download = (dataurl, filename) => {
+  const link = document.createElement("a");
+  link.href = dataurl;
+  link.download = filename;
+  link.click();
+}
 
 class Record extends React.Component {
   state = {
@@ -21,6 +30,10 @@ class Record extends React.Component {
         isRecording: false,
         recordings: this.state.recordings.concat(URL.createObjectURL(blob))
       });
+      const filename = `RTQlit_recording_${uuidv4()}.mp3`;
+      download(URL.createObjectURL(blob), filename);
+      const response = await axios.post("http://127.0.0.1:5000/submit", {filename});
+      console.log(response);
     } else {
       try {
         await recorder.initAudio();
