@@ -1,6 +1,7 @@
 from flask import Flask, request
 from openai import OpenAI
-
+import cv2
+from gaze_tracking import GazeTracking
 import os
 import requests
 import json
@@ -15,11 +16,12 @@ client = OpenAI(api_key="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")
 @app.route("/summarize", methods=['POST'])
 def summarize():
   request_data = request.get_json()
+  presentation_text = request_data['text']
   completion = client.chat.completions.create(
     model="gpt-3.5-turbo-0125",
     messages=[{
       	"role": "user",
-		"content": (f"Summarize the following content as much as possible into very, very brief flashcards for a presentation:\n{request_data['text']}")
+		"content": (f"Summarize the following content as much as possible into very, very brief flashcards for a presentation:\n{presentation_text}")
     }],
     temperature=0.9,
     max_tokens=200,
@@ -64,3 +66,33 @@ def submit():
 #   with open('data.json', 'w') as f:
 #     json.dump(transcription_result, f)
 
+@app.route("/gaze-tracking", methods=['GET'])
+def gaze_tracking():
+  # request_data = request.get_json()
+  # active = request_data["active"]
+  gaze = GazeTracking()
+  webcam = cv2.VideoCapture(0)
+
+  _, frame = webcam.read()
+  gaze.refresh(frame)
+
+  new_frame = gaze.annotated_frame()
+  text = ""
+
+  if gaze.is_right():
+    text = "Looking right"
+  elif gaze.is_left():
+    text = "Looking left"
+  elif gaze.is_center():
+    text = "Looking center"
+
+  cv2.putText(new_frame, text, (60, 60), cv2.FONT_HERSHEY_DUPLEX, 2, (255, 0, 0), 2)
+  # cv2.imshow("Demo", new_frame)
+
+  left_pupil = gaze.pupil_left_coords()
+  right_pupil = gaze.pupil_right_coords()
+
+  webcam.release()
+  cv2.destroyAllWindows()
+
+  return json.dumps({"direction": text, "left_pupil": str(left_pupil), "right_pupil": str(right_pupil)})
