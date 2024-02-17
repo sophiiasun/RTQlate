@@ -6,7 +6,9 @@ import LogIn from './pages/auth/LogIn';
 import Registration from './pages/auth/Registration';
 import Dashboard from './pages/Dashboard';
 import Landing from './pages/Landing';
+import Recorder from './pages/Recorder';
 import Nav from './components/Nav';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path="/signup" element={<Registration/>} />
         <Route path="/login" element={<LogIn/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/recorder" element={<Recorder/>} />
       </Routes>
     </BrowserRouter>
   );
