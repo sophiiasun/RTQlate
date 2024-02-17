@@ -18,8 +18,8 @@ def summarize():
   completion = client.chat.completions.create(
     model="gpt-3.5-turbo-0125",
     messages=[{
-      "role": "user",
-      "content": (f"Summarize the following content as much as possible into very, very brief flashcards for a presentation: \n{request_data["text"]}")
+      	"role": "user",
+		"content": (f"Summarize the following content as much as possible into very, very brief flashcards for a presentation:\n{request_data['text']}")
     }],
     temperature=0.9,
     max_tokens=200,
