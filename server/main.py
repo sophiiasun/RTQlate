@@ -1,4 +1,5 @@
 from flask import Flask
+from openai import OpenAI
 
 import requests
 import json
@@ -8,6 +9,11 @@ app = Flask(__name__)
 
 base_url = "https://api.assemblyai.com/v2"
 headers = { "authorization": "9ab4969c17204b40bbb473f22b075eea" }
+client = OpenAI()
+
+@app.route("/summarize")
+def summarize(text):
+  
 
 @app.route('/submit',methods = ['POST'])
 def submit():
