@@ -50,7 +50,7 @@ class Record extends React.Component {
     const { isLoading, isRecording, recordings } = this.state;
     return (
       <React.Fragment>
-        <button disabled={isLoading} onClick={this.record}>
+        <button disabled={isLoading} onClick={this.record} className="border rounded-full p-2 px-5 border-black my-4">
           {isRecording ? "Stop" : "Record"}
         </button>
         <ul style={{ listStyle: "none", padding: 0 }}>

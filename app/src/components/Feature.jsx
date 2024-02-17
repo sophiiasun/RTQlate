@@ -35,7 +35,7 @@ const Features = () => {
             <span className="underline">Q</span>uality Suggestions
           </div>
           Elevate your communication skills with personalized quality improvement suggestions. 
-          RTQlite analyzes your speech patterns, offering tailored recommendations for continuous improvement.
+          RTQlit analyzes your speech patterns, offering tailored recommendations for continuous improvement.
         </div>
       </div>
     </div>
