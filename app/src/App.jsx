@@ -1,17 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import {  BrowserRouter,  Route,  Routes} from "react-router-dom";
-// import LogIn from './pages/auth/LogIn';
-// import Registration from './pages/auth/Registration';
+import { BrowserRouter,  Route, Routes } from "react-router-dom";
+import LogIn from './pages/auth/LogIn';
+import Registration from './pages/auth/Registration';
 import Test from './pages/test';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/signup" element={<Test/>} />
-        {/* <Route path="/login" component={LogIn} /> */}
+        <Route path="/signup" element={<Registration/>} />
+        <Route path="/login" component={<LogIn/>} />
+        <Route path="/dashboard" component={<Test/>} />
       </Routes>
     </BrowserRouter>
     // <div className="App">

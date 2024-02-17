@@ -60,7 +60,7 @@ function Registration() {
         throw new Error("User registration failed");
       })
       .then(() => {
-        navigate("/setup");
+        navigate("/dashboard");
       })
       .catch((error) => {
         switch (error.code) {
