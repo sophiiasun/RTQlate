@@ -56,5 +56,8 @@ def submit():
       raise RuntimeError(f"Transcription failed: {transcription_result['error']}")
     else:
       time.sleep(3)
-  with open('data.json', 'w') as f:
-    json.dump(transcription_result, f)
+      
+  return transcription_result
+#   with open('data.json', 'w') as f:
+#     json.dump(transcription_result, f)
+
