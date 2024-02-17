@@ -11,7 +11,7 @@ const Landing = () => {
     transform: 'rotate(0.05deg)',
     flexShrink: 0,
     borderRadius: '316.616px',
-    marginTop: '-20%',
+    marginTop: '-10%',
     marginLeft: '-20%',
     position: 'absolute',
     zIndex: -1,
