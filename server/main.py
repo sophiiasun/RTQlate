@@ -21,6 +21,7 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/summarize", methods=['POST'])
+@cross_origin()
 def summarize():
   request_data = request.get_json()
   presentation_text = request_data['text']
@@ -76,6 +77,7 @@ def submit():
   return transcription_result
 
 @app.route("/start-gaze-tracking", methods=['POST'])
+@cross_origin()
 def start_gaze_tracking():
   global gaze, webcam
   gaze = GazeTracking()
@@ -83,6 +85,7 @@ def start_gaze_tracking():
   return ('', 204)
 
 @app.route("/analyze-frame", methods=['GET'])
+@cross_origin()
 def analyze_frame():
   global gaze, webcam
   _, frame = webcam.read()
@@ -103,6 +106,7 @@ def analyze_frame():
   return json.dumps({"direction": text, "left_pupil": str(left_pupil), "right_pupil": str(right_pupil)})
 
 @app.route("/stop-gaze-tracking", methods=['POST'])
+@cross_origin()
 def stop_gaze_tracking():
   global gaze, webcam
   webcam.release()
