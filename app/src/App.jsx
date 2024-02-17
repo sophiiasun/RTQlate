@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter,  Route, Routes } from "react-router-dom";
 import LogIn from './pages/auth/LogIn';
 import Registration from './pages/auth/Registration';
-import Test from './pages/test';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/signup" element={<Registration/>} />
         <Route path="/login" component={<LogIn/>} />
-        <Route path="/dashboard" component={<Test/>} />
+        <Route path="/dashboard" component={<Dashboard/>} />
       </Routes>
     </BrowserRouter>
     // <div className="App">
