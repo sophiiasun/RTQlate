@@ -7,6 +7,7 @@ import os
 import requests
 import json
 import time
+import assemblyai as aai
 
 app = Flask(__name__)
 
@@ -28,8 +29,8 @@ def summarize():
   completion = client.chat.completions.create(
     model="gpt-3.5-turbo-0125",
     messages=[{
-      	"role": "user",
-		"content": (f"Summarize the following content as much as possible into very, very brief flashcards for a presentation:\n{presentation_text}")
+      "role": "user",
+		  "content": (f"Summarize the following content as much as possible into very, very brief flashcards for a presentation:\n{presentation_text}")
     }],
     temperature=0.9,
     max_tokens=200,
