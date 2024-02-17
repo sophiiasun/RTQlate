@@ -9,6 +9,7 @@ import Landing from './pages/Landing';
 import Recorder from './pages/Recorder';
 import Results from './pages/Results';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/recorder" element={<Recorder/>} />
         <Route path="/results" element={<Results/>} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

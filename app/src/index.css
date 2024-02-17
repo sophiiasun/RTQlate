@@ -2,25 +2,66 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* @font-face {
-  font-family: 'PPMori-SemiBold';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../public/fonts/PPMori-SemiBold.otf') format('otf');
+@font-face {
+  font-family: 'PPMori';
+  font-weight: 200; /* Extralight */
+  src: url('../public/fonts/PPMori-Extralight.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'PPMori-Regular';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../public/fonts/PPMori-Regular.otf') format('otf');
-} */
+  font-family: 'PPMori';
+  font-weight: 400; /* Regular */
+  src: url('../public/fonts/PPMori-Regular.otf') format('opentype');
+}
 
 @font-face {
   font-family: 'PPMori';
-  src: url('../public/fonts/PPMori-SemiBold.otf') format('otf'),
-       url('../public/fonts/PPMori-Regular.otf') format('otf'),
-       url('../public/fonts/PPMori-Extralight.otf') format('otf');
+  font-weight: 600; /* SemiBold */
+  src: url('../public/fonts/PPMori-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  font-weight: 300; /* Light */
+  src: url('../public/fonts/ClashDisplay-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  font-weight: 400; /* Regular */
+  src: url('../public/fonts/ClashDisplay-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  font-weight: 500; /* Medium */
+  src: url('../public/fonts/ClashDisplay-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  font-weight: 600; /* Semibold */
+  src: url('../public/fonts/ClashDisplay-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  font-weight: 700; /* Bold */
+  src: url('../public/fonts/ClashDisplay-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  font-weight: 200; /* Extralight */
+  src: url('../public/fonts/ClashDisplay-Extralight.otf') format('opentype');
+}
+
+
+.emphasis {
+  font-family: 'ClashDisplay', sans-serif !important;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
@@ -31,9 +72,36 @@ body {
   font-family: 'PPMori', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* overflow: hidden; */
+  overflow-x: hidden ;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* hide vertical scroll bar */
+}
+
+/* The animation code */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);  
+    opacity: 50%    
+  }
+  25% {
+    opacity: 40%;
+  }
+  50% {
+    opacity: 30%;
+  }
+  75% {
+    opacity: 40%;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 50%
+  }
 }
