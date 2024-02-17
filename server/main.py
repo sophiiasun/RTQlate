@@ -1,5 +1,7 @@
-from flask import Flask
+from flask import Flask, request
+from openai import OpenAI
 
+import os
 import requests
 import json
 import time
@@ -8,10 +10,26 @@ app = Flask(__name__)
 
 base_url = "https://api.assemblyai.com/v2"
 headers = { "authorization": "9ab4969c17204b40bbb473f22b075eea" }
+client = OpenAI(api_key="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")
+
+@app.route("/summarize", methods=['POST'])
+def summarize():
+  request_data = request.get_json()
+  completion = client.chat.completions.create(
+    model="gpt-3.5-turbo-0125",
+    messages=[{
+      	"role": "user",
+		"content": (f"Summarize the following content as much as possible into very, very brief flashcards for a presentation:\n{request_data['text']}")
+    }],
+    temperature=0.9,
+    max_tokens=200,
+    top_p=1
+  )
+  return completion.choices[0].message.content
 
 @app.route('/submit',methods = ['POST'])
 def submit():
-  with open("/Users/sophiasun/Documents/GitHub/Ellehacks-2024-/recordings/YorkUniversity2.mp3" , "rb") as f:
+  with open(os.path.abspath("../recordings/YorkUniversity2.mp3") , "rb") as f:
     response = requests.post(base_url + "/upload", headers=headers, data=f)
 
   upload_url = response.json()["upload_url"]
@@ -40,5 +58,3 @@ def submit():
       time.sleep(3)
   with open('data.json', 'w') as f:
     json.dump(transcription_result, f)
-
-submit()
