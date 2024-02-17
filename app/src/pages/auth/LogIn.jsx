@@ -61,7 +61,7 @@ function LogInComponent() {
             {/* <Logo /> */}
           </div>
           <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-black">
-            Learn more with Empa
+            Learn more with RTQlite
           </h2>
         </div>
         <button className="w-full group h-12 mt-5 mb-2 px-6 border-2 border-gray-300 rounded-full transition duration-300 hover:border-lightPurple">

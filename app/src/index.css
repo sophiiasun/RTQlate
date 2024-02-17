@@ -89,19 +89,19 @@ body::-webkit-scrollbar {
 @keyframes rotate {
   0% {
     transform: rotate(0deg);  
-    opacity: 60%    
+    opacity: 50%    
   }
   25% {
-    opacity: 50%;
-  }
-  50% {
     opacity: 40%;
   }
+  50% {
+    opacity: 30%;
+  }
   75% {
-    opacity: 50%;
+    opacity: 40%;
   }
   100% {
     transform: rotate(360deg);
-    opacity: 60%
+    opacity: 50%
   }
 }

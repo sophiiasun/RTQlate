@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="flex justify-between m-6 border-t border-black py-4">
+    <footer className="flex justify-between mx-6 mt-10 border-t border-black py-4">
       <div>
         Made by Rosanne, Kelly, Carolyn & Sophia
       </div>

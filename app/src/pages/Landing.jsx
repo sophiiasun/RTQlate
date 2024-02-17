@@ -11,14 +11,14 @@ const Landing = () => {
     transform: 'rotate(0.05deg)',
     flexShrink: 0,
     borderRadius: '316.616px',
-    marginTop: '-25%',
+    marginTop: '-20%',
     marginLeft: '-20%',
     position: 'absolute',
     zIndex: -1,
     animation: 'rotate 12s linear infinite',
     opacity: 1,
     backgroundSize: '200% 200%',
-    transformOrigin: '60% 80% 0',
+    transformOrigin: '65% 45% 0',
     animation: 'rotate 15s linear infinite',
   };
   const gradientCircleYellow = {
@@ -36,7 +36,7 @@ const Landing = () => {
     animation: 'rotate 12s linear infinite',
     opacity: 1,
     backgroundSize: '200% 200%',
-    transformOrigin: '60% 80% 0',
+    transformOrigin: '65% 45% 0',
   };
   const gradientCircleOrange = {
     background: '#F3B64E',
@@ -53,11 +53,11 @@ const Landing = () => {
     animation: 'rotate 17s linear infinite',
     opacity: 1,
     backgroundSize: '200% 200%',
-    transformOrigin: '60% 80% 0',
+    transformOrigin: '65% 45% 0',
   };
 
   return (
-    <div className="px-10 pt-40 ">
+    <div className="px-10 pt-48 ">
       <div style={gradientCircleBlue} />
       <div style={gradientCircleYellow} />
       <div style={gradientCircleOrange} />
@@ -69,7 +69,7 @@ const Landing = () => {
             RTQlit
           </span>
         </h1>
-        <p className="py-14">
+        <p className="pb-14">
           Master the art of speech with our app. 
           From pitch-perfect presentations to flawless interviews, 
           empower yourself to achieve professional victories with every word.
@@ -80,6 +80,14 @@ const Landing = () => {
         Try Now
       </Link>
       <Feature />
+      <div className="text-4xl mt-40 flex justify-end">
+        Articulate with confidence &nbsp;
+        <span className="italic">
+          <Link to="/main" className="hover:underline">
+            today.
+          </Link>
+        </span>
+      </div>
     </div>
   );
 };

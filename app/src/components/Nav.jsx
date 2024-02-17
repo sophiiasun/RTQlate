@@ -4,10 +4,15 @@ const Nav = () => {
   return (
     <nav className="flex justify-between px-8 py-4 w-full fixed bg-white">
       <ul className="flex space-x-4 list-none justify-evenly text-xl">
-        <li className="px-2 pt-1 text-3xl emphasis bg-cover bg-blur backdrop-filter backdrop-blur-md rounded-lg">
-          <a href="#">
-            RTQlit
-          </a>
+        <li className="px-2 pt-1 text-3xl bg-cover bg-blur backdrop-filter backdrop-blur-md rounded-lg">
+          <span className="emphasis">
+            <a href="/">
+              RTQlit
+            </a>
+          </span>&nbsp; 
+          <span className="text-lg italic pb-2">
+            — Articulate with RTQlit today
+          </span>
         </li>
       </ul>
       <ul className="flex space-x-4 list-none justify-evenly">
