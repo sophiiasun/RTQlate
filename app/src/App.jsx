@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import Landing from './pages/Landing';
 import Recorder from './pages/Recorder';
 import Results from './pages/Results';
+import Setup from './pages/Setup';
 import Nav from './components/Nav';
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/recorder" element={<Recorder/>} />
         <Route path="/results" element={<Results/>} />
+        <Route path="/setup" element={<Setup/>} />
       </Routes>
     </BrowserRouter>
   );
