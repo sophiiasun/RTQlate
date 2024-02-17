@@ -7,7 +7,11 @@ module.exports = {
     "./public/index.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: ['PPMori-SemiBold', 'PPMori-Regular', 'PPMori-Extralight', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

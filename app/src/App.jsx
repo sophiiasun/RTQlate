@@ -5,32 +5,20 @@ import { BrowserRouter,  Route, Routes } from "react-router-dom";
 import LogIn from './pages/auth/LogIn';
 import Registration from './pages/auth/Registration';
 import Dashboard from './pages/Dashboard';
+import Landing from './pages/Landing';
+import Nav from './components/Nav';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <Nav />
+      <Routes>  
+        <Route path="/" element={<Landing/>} />
         <Route path="/signup" element={<Registration/>} />
-        <Route path="/login" component={<LogIn/>} />
-        <Route path="/dashboard" component={<Dashboard/>} />
+        <Route path="/login" element={<LogIn/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
       </Routes>
     </BrowserRouter>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 
