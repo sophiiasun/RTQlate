@@ -13,6 +13,9 @@ base_url = "https://api.assemblyai.com/v2"
 headers = { "authorization": "9ab4969c17204b40bbb473f22b075eea" }
 client = OpenAI(api_key="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")
 
+gaze = None
+webcam = None
+
 @app.route("/summarize", methods=['POST'])
 def summarize():
   request_data = request.get_json()
@@ -63,20 +66,20 @@ def submit():
       time.sleep(3)
       
   return transcription_result
-#   with open('data.json', 'w') as f:
-#     json.dump(transcription_result, f)
 
-@app.route("/gaze-tracking", methods=['GET'])
-def gaze_tracking():
-  # request_data = request.get_json()
-  # active = request_data["active"]
+@app.route("/start-gaze-tracking", methods=['POST'])
+def start_gaze_tracking():
+  global gaze, webcam
   gaze = GazeTracking()
   webcam = cv2.VideoCapture(0)
+  return ('', 204)
 
+@app.route("/analyze-frame", methods=['GET'])
+def analyze_frame():
+  global gaze, webcam
   _, frame = webcam.read()
   gaze.refresh(frame)
 
-  new_frame = gaze.annotated_frame()
   text = ""
 
   if gaze.is_right():
@@ -86,13 +89,14 @@ def gaze_tracking():
   elif gaze.is_center():
     text = "Looking center"
 
-  cv2.putText(new_frame, text, (60, 60), cv2.FONT_HERSHEY_DUPLEX, 2, (255, 0, 0), 2)
-  # cv2.imshow("Demo", new_frame)
-
   left_pupil = gaze.pupil_left_coords()
   right_pupil = gaze.pupil_right_coords()
 
+  return json.dumps({"direction": text, "left_pupil": str(left_pupil), "right_pupil": str(right_pupil)})
+
+@app.route("/stop-gaze-tracking", methods=['POST'])
+def stop_gaze_tracking():
+  global gaze, webcam
   webcam.release()
   cv2.destroyAllWindows()
-
-  return json.dumps({"direction": text, "left_pupil": str(left_pupil), "right_pupil": str(right_pupil)})
+  return ('', 204)
