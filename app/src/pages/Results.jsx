@@ -38,7 +38,7 @@ const Results = () => {
                 </h2>
             </div>
             <div className="justify-center flex">
-                <audio src={localStorage.getItem("recorderFileName")} controls />
+                <audio src={localStorage.getItem("recordingUrl")} controls />
             </div>
             {transcript? (
                 <div className="text-center mt-8 pt-2 text-lg font-semibold text-black/80">
