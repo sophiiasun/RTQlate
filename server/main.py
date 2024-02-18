@@ -8,6 +8,7 @@ import requests
 import json
 import time
 import assemblyai as aai
+import subprocess
 
 app = Flask(__name__)
 
@@ -39,7 +40,9 @@ def summarize():
   content = completion.choices[0].message.content
   bullet_points = content.replace("\n", "").split("- ")
   bullet_points.pop(0)
-  return bullet_points
+
+  result = subprocess.run(['python', 'flashcard.py', json.dumps(bullet_points)], capture_output=True)
+  return result.stdout
 
 @app.route("/submit", methods=['POST'])
 @cross_origin()
@@ -124,3 +127,6 @@ def stop_gaze_tracking():
   webcam.release()
   cv2.destroyAllWindows()
   return ('', 204)
+
+if __name__ == '__main__':
+    app.run(debug=True)

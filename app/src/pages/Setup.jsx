@@ -24,7 +24,7 @@ const Setup = () => {
     return (
         <div className="pt-28 mx-10 h-screen">
             <h1>Enter your script below (optional):</h1>
-            <textarea id="script" name="script" onChange={handleChange}/><br></br>
+            <textarea id="script" name="script" value={text} onChange={handleChange}/><br></br>
             <input type="submit" value="Submit" onClick={handleSubmit}/>
             <input type="submit" value="Skip" onClick={handleSkip}/>
         </div>
