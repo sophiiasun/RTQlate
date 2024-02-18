@@ -5,7 +5,7 @@
       </ul>
     </div>
     <h3>Articulate with RTQlate</h3>
-    <h4><i>🏅 1st Place SheHacks Winner</i></h4>
+    <h4><i>description</i></h4>
    <br>
     <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"/>
     <img src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white"/>
@@ -16,9 +16,8 @@
     <br><br>
 </div>
 
-![image](https://github.com/roskzhu/Empa/assets/110139243/69dcafa4-f4e0-404b-be2d-c92247d32c6c)
 
-Empa is a full-stack web application that leverages computer vision and machine learning to analyze facial expressions and translate them into recognizable emotions. It's designed to assist individuals with communication disorders in social interactions, help those on the autism spectrum understand emotional cues, and enhance empathy in diverse, cross-cultural communications.
+description
 
 ## Features
 - login w/ firebase for accounts
