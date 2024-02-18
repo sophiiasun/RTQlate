@@ -9,12 +9,15 @@ import json
 import time
 import assemblyai as aai
 import subprocess
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
 base_url = "https://api.assemblyai.com/v2"
 headers = { "authorization": "9ab4969c17204b40bbb473f22b075eea" }
-client = OpenAI(api_key=OPENAI_API_KEY)
+client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 
 gaze = None
 webcam = None
@@ -127,6 +130,3 @@ def stop_gaze_tracking():
   webcam.release()
   cv2.destroyAllWindows()
   return ('', 204)
-
-if __name__ == '__main__':
-    app.run(debug=True)
