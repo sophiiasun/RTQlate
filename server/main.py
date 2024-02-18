@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 base_url = "https://api.assemblyai.com/v2"
 headers = { "authorization": "9ab4969c17204b40bbb473f22b075eea" }
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 gaze = None
 webcam = None
