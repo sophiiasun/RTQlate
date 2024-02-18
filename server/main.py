@@ -46,7 +46,7 @@ def summarize():
 def submit():
   request_data = request.get_json()
   filename = request_data['filename']
-  print(os.path.abspath(f"../../../Downloads/{filename}"))
+  print(os.path.abspath(f"{os.path.expanduser("~")}/Downloads/{filename}"))
   # try to open the file for max 5 attempts, waiting 1 second in between each attempt
   for i in range(5):
     print(f"Attempt {i}")
