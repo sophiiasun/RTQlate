@@ -1,4 +1,5 @@
 <div align="center">
+    <img src="https://github.com/sophiiasun/RTQlit/assets/110139243/dfabcfd6-9375-463f-a50d-a34d8c9a8675" width="50px" style="pointer-events: none;"/>
     <div id="user-content-toc">
       <ul>
           <summary><h1 style="display: inline-block; margin-bottom:0px; font-size:60pt;">RTQlate</h1></summary>
@@ -16,6 +17,7 @@
     <br><br>
 </div>
 
+![image](https://github.com/sophiiasun/RTQlit/assets/110139243/91e34e7b-bcb8-4bfe-ad0e-bb94593f2e8d)
 
 description
 
