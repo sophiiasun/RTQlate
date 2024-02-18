@@ -81,16 +81,10 @@ _(localhost:3000 by default)_
 
 
 ### Sneak Peak
+![image](https://github.com/sophiiasun/RTQlit/assets/110139243/a35c7558-0b19-4fc6-bc95-1db3769914c5)
 
 
 ## Next Steps
 - [X] Eyes chart
 - [ ] Deployment
 - [X] Demo Video
-
-
-
-pages: 
-- landing
-- setup to upload script
-- main -> transcribed text
