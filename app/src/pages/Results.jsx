@@ -8,6 +8,7 @@ const Results = () => {
     transcript.words.forEach((element) => {
         const obj = {
             word: element.text,
+            confidence: element.confidence,
             squiggle: (element.confidence < 0.7 ? true : false),
             color: ""
         }
