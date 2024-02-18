@@ -50,7 +50,7 @@ const Results = () => {
                 )
             }
             <div className="justify-content flex">
-            <div className="mx-20 text-center my-5 w-[50%]">
+            <div className="mx-20 text-center my-5 justify-content flex">
                 {/* change testWords to words before demo!!! */}
                 <p className="">
                     {words.map((wordObj, index) => (

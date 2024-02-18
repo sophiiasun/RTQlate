@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { setupAuthListener, auth } from "./auth"; 
+import { auth } from "./auth"; 
 import { Link, useNavigate } from "react-router-dom";
 import {
   GoogleAuthProvider,
