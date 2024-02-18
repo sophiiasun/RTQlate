@@ -31,7 +31,7 @@ const Setup = () => {
                 <div>
                     <textarea id="script" name="script" onChange={handleChange}
                                 placeholder='Paste your script here...' value={text}
-                                className="w-full border-neutral-300 border rounded-lg p-4 min-h-12"/>
+                                className="w-full border-neutral-300 border rounded-lg p-4 min-h-52"/>
                     <br></br>
                     <div className="flex justify-evenly">
                         <input type="submit" value="Submit" onClick={handleSubmit}

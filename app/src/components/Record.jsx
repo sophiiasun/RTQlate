@@ -91,8 +91,23 @@ class Record extends React.Component {
             {isRecording ? "Stop" : "Record"}
           </button>
         </div>
-        <div className="flex justify-center">
-          {recording && <><button onClick={this.handleNextPage}>BIG BUTTOn</button><audio src={recording} controls /></>}
+        <div className="text-center">
+          <br/>
+          {recording && 
+            <>
+              <div className="text-center">
+                <div className="flex justify-center">
+                  <audio src={recording} controls />
+                </div>
+                <br/>
+                <div className="flex justify-center">
+                  <button onClick={this.handleNextPage} className="flex justify-center underline">
+                    See Results →
+                  </button>
+                </div>
+              </div>
+            </>
+            }
           {isRecording && <p>Eye Contact Status: {this.state.eyeContact === "Looking center" ? "Good!" : "Face the camera :("}</p>}
         </div>
       </>

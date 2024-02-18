@@ -3,14 +3,14 @@ import React from 'react';
 const Features = () => {
   return (
     <div className="mt-60 mx-6 text-black/90">
-      <div className="text-5xl my-8 flex justify-center">
+      <div className="text-5xl my-8 flex justify-center border-b pb-10">
         What does &nbsp; <span className="emphasis">
           RTQ
           </span> &nbsp; stand for?
       </div>
       <div className="grid grid-cols-3 gap-8">
         <div>
-          <div className='text-4xl my-6'>
+          <div className='text-4xl my-6'> 
             01
           </div>
           <div className='text-2xl my-4'>
