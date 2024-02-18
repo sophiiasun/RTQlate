@@ -1,3 +1,8 @@
+// compile
+// arduino-cli compile --fqbn arduino:avr:uno "/Users/kellyqu/Documents/GitHub/Ellehacks-2024- /server/server.ino"
+// upload
+// arduino-cli upload -p /dev/tty.usbmodem101 --fqbn arduino:avr:uno "/Users/kellyqu/Documents/GitHub/Ellehacks-2024- /server"
+
 #include <LiquidCrystal.h>
 
 // initialize the library with the numbers of the interface pins
