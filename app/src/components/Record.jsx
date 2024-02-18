@@ -17,6 +17,12 @@ const download = (dataurl, filename) => {
   link.click();
 }
 
+function blobToDataURL(blob, callback) {
+  var a = new FileReader();
+  a.onload = function(e) {callback(e.target.result);}
+  a.readAsDataURL(blob);
+}
+
 class Record extends React.Component {
   state = {
     isLoading: false,
@@ -31,15 +37,6 @@ class Record extends React.Component {
   horizontalRatio = [];
   verticalRatio = [];
 
-  // componentDidUpdate(prevState) {
-  //   while (this.state.isRecording && !prevState.isRecording) {
-  //     setTimeout(async () => {
-  //       const response = await axios.get(`${backendRootUrl}/analyze-frame`);
-  //       console.log(response);
-  //     }, 2000);
-  //   }
-  // }
-
   record = async () => {
     this.setState({ isLoading: true });
 
@@ -50,9 +47,13 @@ class Record extends React.Component {
         isRecording: false,
         recording: URL.createObjectURL(blob)
       });
+
+      blobToDataURL(blob, function(dataurl){
+        localStorage.setItem("recordingUrl", dataurl);
+      });
+
       await axios.post(`${backendRootUrl}/stop-gaze-tracking`);
       const filename = `RTQlit_recording_${uuidv4()}.mp3`;
-      localStorage.setItem("recorderFileName", filename);
       download(URL.createObjectURL(blob), filename);
       const response = await axios.post(`${backendRootUrl}/submit`, {filename});
       this.setState({ gotResponse: true })
@@ -116,6 +117,7 @@ class Record extends React.Component {
         </div>
         <div className="text-center">
           <br/>
+          {recording && !gotResponse && <div id="overlay" className="flex justify-center"><img src="./Spinner-1s-200px.gif" alt="Be patient..." /></div>}
           {gotResponse && 
             <>
               <div className="text-center">
