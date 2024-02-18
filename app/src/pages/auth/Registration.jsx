@@ -8,7 +8,7 @@ import {
   signInWithRedirect,
   updateProfile,
 } from "firebase/auth";
-// import Logo from "../../components/ui/logo";
+import Logo from "../../components/ui/Logo";
 
 
 function Registration() {
@@ -60,7 +60,7 @@ function Registration() {
         throw new Error("User registration failed");
       })
       .then(() => {
-        navigate("/dashboard");
+        navigate("/setup");
       })
       .catch((error) => {
         switch (error.code) {
@@ -104,12 +104,11 @@ function Registration() {
   // }, []);
 
   return (
-    <div className="flex h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-white">
+    <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-white">
       <div className="max-w-sm mx-auto w-full">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col items-center">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col items-center pt-14">
           <div className="w-14">
-            {/* <Logo /> */}
-            {/* <img className='w-1/3' src='/assets/blob1.png' alt='Image Description'/> */}
+            <Logo />
           </div>
           <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-black">
             Learn more with RTQlit
@@ -148,7 +147,7 @@ function Registration() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-indigo-600"
+                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-blue-600"
                 />
               </div>
             </div>
@@ -169,7 +168,7 @@ function Registration() {
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
                   required
-                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-indigo-600"
+                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-blue-600"
                 />
               </div>
             </div>
@@ -190,7 +189,7 @@ function Registration() {
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete="new-password"
                   required
-                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-indigo-600"
+                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-blue-600"
                 />
               </div>
             </div>
@@ -213,7 +212,7 @@ function Registration() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   autoComplete="new-password"
                   required
-                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-indigo-600"
+                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-blue-600"
                 />
               </div>
             </div>
@@ -221,7 +220,7 @@ function Registration() {
             <div>
               <button
                 type="submit"
-                className="mt-8 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500"
+                className="mt-8 flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500"
               >
                 Create Account
               </button>
@@ -236,7 +235,7 @@ function Registration() {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+              className="font-semibold leading-6 text-blue-600 hover:text-blue-500"
             >
               Log in
             </Link>

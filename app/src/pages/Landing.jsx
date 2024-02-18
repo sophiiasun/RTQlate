@@ -57,19 +57,19 @@ const Landing = () => {
   };
 
   return (
-    <div className="px-10 pt-48 ">
+    <div className="px-10 pt-48 text-black/90">
       <div style={gradientCircleBlue} />
       <div style={gradientCircleYellow} />
       <div style={gradientCircleOrange} />
       <div className="w-[70%]">
-        <h1 className="font-regular text-8xl leading-tight">
+        <h1 className="font-regular text-8xl leading-tight text-black/90">
           <span className="">Elevate</span> {" "}
            your speech with {" "}
           <span className="italic">
             RTQlit
           </span>
         </h1>
-        <p className="pb-14">
+        <p className="pb-14 text-black/90">
           Master the art of speech with our app. 
           From pitch-perfect presentations to flawless interviews, 
           empower yourself to achieve professional victories with every word.
@@ -83,7 +83,7 @@ const Landing = () => {
       <div className="text-4xl mt-40 flex justify-end">
         Articulate with confidence &nbsp;
         <span className="italic">
-          <Link to="/main" className="hover:underline">
+          <Link to="/signin" className="hover:underline">
             today.
           </Link>
         </span>

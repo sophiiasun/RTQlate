@@ -82,12 +82,19 @@ class Record extends React.Component {
     const { isLoading, isRecording, recording } = this.state;
     return (
       <>
-        <Webcam width={480} height={360} />
-        <button disabled={isLoading} onClick={this.record} className="border rounded-full p-2 px-5 border-black my-4">
-          {isRecording ? "Stop" : "Record"}
-        </button>
-        {recording && <><button onClick={this.handleNextPage}>BIG BUTTOn</button><audio src={recording} controls /></>}
-        {isRecording && <p>Eye Contact Status: {this.state.eyeContact === "Looking center" ? "Good!" : "Face the camera :("}</p>}
+        <div className="flex justify-center">
+          <Webcam width={480} height={360} className="rounded-lg"/>
+        </div>
+        <div className="flex justify-center">
+          <button disabled={isLoading} onClick={this.record} 
+                  className="border rounded-full p-2 px-5 border-black my-4">
+            {isRecording ? "Stop" : "Record"}
+          </button>
+        </div>
+        <div className="flex justify-center">
+          {recording && <><button onClick={this.handleNextPage}>BIG BUTTOn</button><audio src={recording} controls /></>}
+          {isRecording && <p>Eye Contact Status: {this.state.eyeContact === "Looking center" ? "Good!" : "Face the camera :("}</p>}
+        </div>
       </>
     );
   }

@@ -7,21 +7,32 @@ import {
   signInWithEmailAndPassword,
   signInWithRedirect,
 } from "firebase/auth";
-// import Logo from "../../components/ui/logo";
+import Logo from "../../components/ui/Logo";
+import { useAuth } from "../context/AuthContext";
 
 
 function LogInComponent() {
+  const { currentUser } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
+  console.log("currentUser (login page log msg): ", currentUser);
+
+  useEffect(() => {
+    // Redirect to setup page if user is already authenticated
+    if (currentUser) {
+      navigate("/setup");
+    }
+  }, [currentUser, navigate]);
+
   const SignIn = async (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        navigate("/dashboard");
+        navigate("/setup");
       })
       .catch((error) => {
         if (error.code === "auth/invalid-login-credentials") {
@@ -43,7 +54,7 @@ function LogInComponent() {
     getRedirectResult(auth)
       .then((result) => {
         if (result && result.user) {
-          navigate("/dashboard");
+          navigate("/setup");
         }
         // setLoading(false);
       })
@@ -54,17 +65,17 @@ function LogInComponent() {
   }, [auth, navigate]);
 
   return (
-    <div className="flex h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-white">
+    <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-white">
       <div className="max-w-sm mx-auto w-full">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col items-center">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col items-center pt-14">
           <div className="w-14">
-            {/* <Logo /> */}
+            <Logo />
           </div>
           <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-black">
             Learn more with RTQlit
           </h2>
         </div>
-        <button className="w-full group h-12 mt-5 mb-2 px-6 border-2 border-gray-300 rounded-full transition duration-300 hover:border-lightPurple">
+        <button className="w-full group h-12 mt-5 mb-2 px-6 border border-gray-300 rounded-full transition duration-300 hover:border-lightPurple">
           <div className="relative flex items-center space-x-4 justify-center">
             <img
               src="https://tailus.io/sources/blocks/social/preview/images/google.svg"
@@ -98,7 +109,7 @@ function LogInComponent() {
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
                   required
-                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-indigo-600"
+                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black placeholder:text-gray-400 focus:border-blue-600"
                 />
               </div>
             </div>
@@ -119,7 +130,7 @@ function LogInComponent() {
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete="new-password"
                   required
-                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black shadow-sm placeholder:text-gray-400 focus:border-indigo-600"
+                  className="pl-2 block w-full rounded-md border-2 py-1.5 bg-white text-black placeholder:text-gray-400 focus:border-blue-600"
                 />
               </div>
             </div>
@@ -127,7 +138,7 @@ function LogInComponent() {
             <div>
               <button
                 type="submit"
-                className="mt-8 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500"
+                className="mt-8 flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white hover:bg-blue-500"
               >
                 Sign in
               </button>
@@ -142,7 +153,7 @@ function LogInComponent() {
             Don't have an account yet?{" "}
             <Link
               to="/signup"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+              className="font-semibold leading-6 text-blue-600 hover:text-blue-500"
             >
               Create one
             </Link>

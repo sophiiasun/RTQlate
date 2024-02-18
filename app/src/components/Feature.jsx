@@ -2,7 +2,7 @@ import React from 'react';
 
 const Features = () => {
   return (
-    <div className="mt-60 mx-6">
+    <div className="mt-60 mx-6 text-black/90">
       <div className="text-5xl my-8 flex justify-center">
         What does &nbsp; <span className="emphasis">
           RTQ
