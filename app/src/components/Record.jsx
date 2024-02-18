@@ -46,6 +46,7 @@ class Record extends React.Component {
       });
       await axios.post(`${backendRootUrl}/stop-gaze-tracking`);
       const filename = `RTQlit_recording_${uuidv4()}.mp3`;
+      localStorage.setItem("recorderFileName", filename);
       download(URL.createObjectURL(blob), filename);
       const response = await axios.post(`${backendRootUrl}/submit`, {filename});
       localStorage.setItem("recording_content_analysis", JSON.stringify(await response.data));
