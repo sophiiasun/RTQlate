@@ -24,10 +24,12 @@
 description
 
 ## Features
-- login w/ firebase for accounts
-- assemblyai to transcribe speech and check pauses between words and other stuff
-- openai takes that output and writes feedback (displayed on screen)
-- LCD flashcards from summarized script
+RTQlate is a 5-feature speaking assistant and feedback provider:
+- Auto-summarized flash cards in the convenient form of a physical wearable.
+- Real-time eye-tracking
+- Sentiment analysis
+- Enunciation, pronunciation, and clarity indicator
+- Confidence level measurer
 
 ## Built with
 - Firebase for account authentication
