@@ -19,7 +19,7 @@
     <br><br>
 </div>
 
-![image](https://github.com/sophiiasun/RTQlate/assets/110139243/6e2a8fdd-ade5-4d0b-b6a5-75ac33a8fbc9)
+![image](https://github.com/sophiiasun/RTQlate/assets/110139243/03020153-613c-45ad-bfc8-fa841fb42e8e)
 
 Fall is the time to get your shit together. It brings the academic pressures with the onset of the school year, as well as a new recruiting season! But since you were slacking off and relaxing in the summer, you now realize it's been a long long time since you last practiced your speaking skills. Suddenly the fall season is throwing all these school presentations, job interviews, and other super-important speaking situations right at you and you've forgotten how to articulate your words! Introducing... RTQlate! (AR-TI-CU-late)
 
