@@ -3,6 +3,7 @@ import vmsg from "vmsg";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import Webcam from "react-webcam";
+import { SyncLoader } from "react-spinners";
 
 const backendRootUrl = "http://127.0.0.1:5000"
 
@@ -102,6 +103,14 @@ class Record extends React.Component {
     window.location.href = "/results";
   }
 
+  if (isLoading) {
+    return (
+      <div className="h-screen flex justify-center items-center">
+        <SyncLoader color="#0077ff" />
+      </div>
+    );
+  }
+
   render() {
     const { isLoading, isRecording, recording, gotResponse } = this.state;
     return (
@@ -117,7 +126,10 @@ class Record extends React.Component {
         </div>
         <div className="text-center">
           <br/>
-          {recording && !gotResponse && <div id="overlay" className="flex justify-center"><img src="./Spinner-1s-200px.gif" alt="Be patient..." /></div>}
+          {recording && !gotResponse && <div id="overlay" className="flex justify-center">
+            {/* <img src="./Spinner-1s-200px.gif" alt="Be patient..." /> */}
+            <SyncLoader color="#6194f2" />
+            </div>}
           {gotResponse && 
             <>
               <div className="text-center">

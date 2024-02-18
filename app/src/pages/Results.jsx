@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ReactApexChart from "apexcharts";
 import Record from '../components/Record';
-import EyeChart from '../components/EyeChart';
 
 const Results = () => {
     const transcript = JSON.parse(localStorage.getItem("recording_content_analysis")) || {};
@@ -30,6 +29,62 @@ const Results = () => {
         console.error(e);
     }
     console.log(words);
+
+    const testWords = [
+        {word: 'Transcribe', confidence: 0.73106, squiggle: false, color: 'red'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
+        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
+        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
+        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
+        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
+        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
+        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
+        {word: 'Biden.', confidence: 0.99833, squiggle: false, color: ''}
+    ];
+
 
     const horizontalRatios = localStorage.getItem("horizontalRatios");
     const verticalRatios = localStorage.getItem("verticalRatios");
@@ -144,7 +199,7 @@ const Results = () => {
             <div className="mx-20 text-center my-5 justify-content flex">
                 {/* change testWords to words before demo!!! */}
                 <p className="">
-                    {words.map((wordObj, index) => (
+                    {testWords.map((wordObj, index) => (
                         <span key={index} 
                                 className={wordObj.squiggle ? 'wavy' : ''}
                                 style={{ color: wordObj.color,  }}>
