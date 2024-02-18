@@ -5,22 +5,32 @@
 
 #include <LiquidCrystal.h>
 
-// initialize the library with the numbers of the interface pins
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 void setup() {
-  // set up the LCD's number of columns and rows:
+  // Initialize serial communication
+  Serial.begin(9600);
+  // Set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
-  // Splitting messages to fit 16x2
-  // line one
-  lcd.print("sample text");
-  // Set the cursor to the beginning of the line two
-  lcd.setCursor(0, 1);
-  // Continue the message on the second line
-  lcd.print("for flashcards!");
 }
 
 void loop() {
-  // n/a
+  if (Serial.available() > 0) {
+    // Clear the LCD before displaying new text
+    lcd.clear();
+    // Read the incoming string
+    String incomingString = Serial.readStringUntil('\n');
+    
+    // Display the first part of the incoming string on the first line
+    lcd.setCursor(0, 0); // Set cursor to the first line
+    if(incomingString.length() <= 16) {
+      lcd.print(incomingString);
+    } else {
+      lcd.print(incomingString.substring(0, 16));
+      // If the string is longer than 16 characters, continue on the second line
+      lcd.setCursor(0, 1); // Set cursor to the second line
+      lcd.print(incomingString.substring(16));
+    }
+  }
 }
