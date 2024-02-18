@@ -47,8 +47,16 @@ def submit():
   request_data = request.get_json()
   filename = request_data['filename']
   print(os.path.abspath(f"../../../Downloads/{filename}"))
-  with open(os.path.abspath(f"../../../Downloads/{filename}") , "rb") as f:
-    response = requests.post(base_url + "/upload", headers=headers, data=f)
+  # try to open the file for max 5 attempts, waiting 1 second in between each attempt
+  for i in range(5):
+    print(f"Attempt {i}")
+    try:
+      with open(os.path.abspath(f"../../../Downloads/{filename}") , "rb") as f:
+        response = requests.post(base_url + "/upload", headers=headers, data=f)
+        if response:
+          break
+    except:
+      time.sleep(1)
 
   upload_url = response.json()["upload_url"]
   data = {
@@ -67,8 +75,9 @@ def submit():
     transcription_result = requests.get(polling_endpoint, headers=headers).json()
     if transcription_result['status'] == 'completed':
       auto_highlights_result = transcription_result['auto_highlights_result']
-      for highlight in auto_highlights_result['results']:
-        print(f"Highlight: {highlight['text']}, Count: {highlight['count']}, Rank: {highlight['rank']}, Timestamps: {highlight['timestamps']}")
+      if auto_highlights_result:
+        for highlight in auto_highlights_result['results']:
+          print(f"Highlight: {highlight['text']}, Count: {highlight['count']}, Rank: {highlight['rank']}, Timestamps: {highlight['timestamps']}")
       break
     elif transcription_result['status'] == 'error':
       raise RuntimeError(f"Transcription failed: {transcription_result['error']}")
