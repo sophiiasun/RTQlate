@@ -16,7 +16,7 @@ const Features = () => {
           <div className='text-2xl my-4'>
             <span className="underline">R</span>eal-Time Feedback
           </div>
-          RTQlit provides instant, real-time feedback on your speech, ensuring you receive immediate insights and corrections.
+          RTQlate provides instant, real-time feedback on your speech, ensuring you receive immediate insights and corrections.
         </div>
         <div>
           <div className='text-4xl my-6'>
@@ -35,7 +35,7 @@ const Features = () => {
             <span className="underline">Q</span>uality Suggestions
           </div>
           Elevate your communication skills with personalized quality improvement suggestions. 
-          RTQlit analyzes your speech patterns, offering tailored recommendations for continuous improvement.
+          RTQlate analyzes your speech patterns, offering tailored recommendations for continuous improvement.
         </div>
       </div>
     </div>

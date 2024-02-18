@@ -85,7 +85,6 @@ const Results = () => {
         {word: 'Biden.', confidence: 0.99833, squiggle: false, color: ''}
     ];
 
-
     const horizontalRatios = localStorage.getItem("horizontalRatios");
     const verticalRatios = localStorage.getItem("verticalRatios");
 
@@ -176,6 +175,8 @@ const Results = () => {
 
     console.log(graphData);
 
+    const percentageContact = (localStorage.getItem("numGoodEyeContact")) / (localStorage.getItem("numGoodEyeContact") +  localStorage.getItem("numBadEyeContact"));
+
     return (
         <div className="pt-32 mx-10 h-screen text-black/90">
             <div className="flex justify-center text-center">
@@ -199,7 +200,7 @@ const Results = () => {
             <div className="mx-20 text-center my-5 justify-content flex">
                 {/* change testWords to words before demo!!! */}
                 <p className="">
-                    {testWords.map((wordObj, index) => (
+                    {words.map((wordObj, index) => (
                         <span key={index} 
                                 className={wordObj.squiggle ? 'wavy' : ''}
                                 style={{ color: wordObj.color,  }}>
@@ -223,6 +224,22 @@ const Results = () => {
                 <ReactApexChart options={graphData.options} series={graphData.series} type="area" height={350} />
               </div> */}
               <div id="html-dist"></div>
+              <div className="flex justify-center text-center border border-neutral-300">
+                You spent
+                <br/>
+                {percentageContact ? (
+                <span>
+                    {percentageContact}%
+                </span> 
+                ) : (
+                    <>
+                        %
+                    </>                    
+                    )
+                }
+                <br/>
+                of the time maintaing good eye contact.
+              </div>
             </div>
         </div>
     );

@@ -66,7 +66,7 @@ const Landing = () => {
           <span className="">Elevate</span> {" "}
            your speech with {" "}
           <span className="italic">
-            RTQlit
+            RTQlate
           </span>
         </h1>
         <p className="pb-14 text-black/90">

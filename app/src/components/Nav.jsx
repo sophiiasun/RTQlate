@@ -13,11 +13,11 @@ const Nav = () => {
         <li className="px-2 pt-1 text-3xl bg-cover bg-blur backdrop-filter backdrop-blur-md rounded-lg">
           <span className="emphasis">
             <a href="/">
-              RTQlit
+              RTQlate
             </a>
           </span>&nbsp; 
           <span className="text-lg italic pb-2">
-            — Articulate with RTQlit today
+            — Articulate with RTQlate today
           </span>
         </li>
       </ul>
