@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "Arduino",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/Users/kellyqu/Documents/Arduino/libraries/**",
+                "/Users/kellyqu/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/**",
+                "/Users/kellyqu/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/variants/**",
+                "/Users/kellyqu/Library/Arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/avr/include/**"
+            ],
+            "forcedInclude": [
+                "/Users/kellyqu/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/Arduino.h"
+            ],
+            "defines": [
+                "__AVR_ATmega328P__", // arduino uno
+                "F_CPU=16000000L"
+            ],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-gcc-x64"
+        }
+    ],
+    "version": 4
+}
