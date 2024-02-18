@@ -2,6 +2,7 @@ import React from "react";
 import vmsg from "vmsg";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import Webcam from "react-webcam";
 
 const backendRootUrl = "http://127.0.0.1:5000"
 
@@ -21,8 +22,7 @@ class Record extends React.Component {
     isLoading: false,
     isRecording: false,
     recording: null,
-    eyeContact: "",
-    submitResponse: null
+    eyeContact: ""
   };
 
   // componentDidUpdate(prevState) {
@@ -48,7 +48,7 @@ class Record extends React.Component {
       const filename = `RTQlit_recording_${uuidv4()}.mp3`;
       download(URL.createObjectURL(blob), filename);
       const response = await axios.post(`${backendRootUrl}/submit`, {filename});
-      this.setState({ submitResponse: response.data })
+      localStorage.setItem("recording_content_analysis", JSON.stringify(await response.data));
     } else {
       try {
         await recorder.initAudio();
@@ -74,21 +74,19 @@ class Record extends React.Component {
   };
 
   handleNextPage() {
-
+    window.location.href = "/results";
   }
 
   render() {
     const { isLoading, isRecording, recording } = this.state;
     return (
       <>
-        <React.Fragment>
-          <button disabled={isLoading} onClick={this.record} className="border rounded-full p-2 px-5 border-black my-4">
-            {isRecording ? "Stop" : "Record"}
-          </button>
-          {recording && <><button onclick={this.handleNextPage}>BIG BUTTOn</button><audio src={recording} controls /></>}
-          
-        </React.Fragment>
-        {isRecording && <p>Eye Contact Status: {this.state.eyeContact}</p>}
+        <Webcam width={480} height={360} />
+        <button disabled={isLoading} onClick={this.record} className="border rounded-full p-2 px-5 border-black my-4">
+          {isRecording ? "Stop" : "Record"}
+        </button>
+        {recording && <><button onClick={this.handleNextPage}>BIG BUTTOn</button><audio src={recording} controls /></>}
+        {isRecording && <p>Eye Contact Status: {this.state.eyeContact === "Looking center" ? "Good!" : "Face the camera :("}</p>}
       </>
     );
   }
