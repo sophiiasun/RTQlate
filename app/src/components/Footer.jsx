@@ -10,7 +10,7 @@ const Footer = () => {
         Built with React, 
       </div> */}
       <div>
-        <a href="https://github.com/sophiiasun/RTQlit" className="hover:underline">
+        <a href="https://github.com/sophiiasun/RTQlate" className="hover:underline">
           Source Code ↗
         </a>
       </div>
