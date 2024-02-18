@@ -22,8 +22,6 @@ client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 gaze = None
 webcam = None
 
-gazeTracker = []
-
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
@@ -123,9 +121,13 @@ def analyze_frame():
   left_pupil = gaze.pupil_left_coords()
   right_pupil = gaze.pupil_right_coords()
 
-  gazeTracker.insert({left_pupil, right_pupil})
-
-  return json.dumps({"direction": text, "left_pupil": str(left_pupil), "right_pupil": str(right_pupil)})
+  return json.dumps({
+    "direction": text, 
+    "left_pupil": str(left_pupil), 
+    "right_pupil": str(right_pupil),
+    "horizontal_ratio": gaze.horizontal_ratio(),
+    "vertial_ratio": gaze.vertical_ratio()
+  })
 
 @app.route("/stop-gaze-tracking", methods=['POST'])
 @cross_origin()
