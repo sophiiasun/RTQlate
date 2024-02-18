@@ -21,11 +21,11 @@
 
 ![image](https://github.com/sophiiasun/RTQlit/assets/110139243/91e34e7b-bcb8-4bfe-ad0e-bb94593f2e8d)
 
-description
+Fall is the time to get your shit together. It brings the academic pressures with the onset of the school year, as well as a new recruiting season! But since you were slacking off and relaxing in the summer, you now realize it's been a long long time since you last practiced your speaking skills. Suddenly the fall season is throwing all these school presentations, job interviews, and other super-important speaking situations right at you and you've forgotten how to articulate your words! Introducing... RTQlate! (AR-TI-CU-late)
 
 ## Features
 RTQlate is a 5-feature speaking assistant and feedback provider:
-- Auto-summarized flash cards in the convenient form of a physical wearable.
+- Auto-summarized flashcards in the convenient form of a physical wearable.
 - Real-time eye-tracking
 - Sentiment analysis
 - Enunciation, pronunciation, and clarity indicator
@@ -36,7 +36,7 @@ RTQlate is a 5-feature speaking assistant and feedback provider:
 - AssemblyAI to transcribe speech and check pauses between words and other stuff
 - OpenAI API for text summarization
 - Python Flask server
-- Arduino LCD flashcards via C++
+- The flash card bullet points are displayed on an LCD, built using Arduino and C++. A push button is used to flip through the cards. These points are automatically summarized by our OpenCV endpoint.
 - Vanilla React frontend styled with Tailwind CSS
   
 
