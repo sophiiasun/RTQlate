@@ -103,6 +103,7 @@ class Record extends React.Component {
         </div>
         <div className="text-center">
           <br/>
+          {recording && !gotResponse && <div id="overlay" className="flex justify-center"><img src="./Spinner-1s-200px.gif" alt="Be patient..." /></div>}
           {gotResponse && 
             <>
               <div className="text-center">
