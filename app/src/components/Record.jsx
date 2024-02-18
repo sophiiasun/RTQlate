@@ -25,6 +25,9 @@ class Record extends React.Component {
     eyeContact: ""
   };
 
+  horizontalRatio = [];
+  verticalRatio = [];
+
   // componentDidUpdate(prevState) {
   //   while (this.state.isRecording && !prevState.isRecording) {
   //     setTimeout(async () => {
@@ -50,6 +53,8 @@ class Record extends React.Component {
       download(URL.createObjectURL(blob), filename);
       const response = await axios.post(`${backendRootUrl}/submit`, {filename});
       localStorage.setItem("recording_content_analysis", JSON.stringify(await response.data));
+      localStorage.setItem("horizontalRatios", this.horizontalRatio);
+      localStorage.setItem("verticalRatios", this.verticalRatio);
     } else {
       try {
         await recorder.initAudio();
@@ -63,6 +68,8 @@ class Record extends React.Component {
             this.setState({
               eyeContact: response.data.direction
             });
+            this.horizontalRatio.push(response.data.horizontalRatio);
+            this.verticalRatio.push(response.data.verticalRatio);
           }
           setTimeout(analyzeFrames, 500);
         }
