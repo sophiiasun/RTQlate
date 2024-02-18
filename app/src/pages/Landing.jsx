@@ -57,15 +57,15 @@ const Landing = () => {
   };
 
   return (
-    <div className="px-10 pt-48 text-black/90">
+    <div className="px-10 pt-56 text-black/90">
       <div style={gradientCircleBlue} />
       <div style={gradientCircleYellow} />
       <div style={gradientCircleOrange} />
-      <div className="w-[70%]">
-        <h1 className="font-regular text-8xl leading-tight text-black/90">
+      <div className="w-[60%]">
+        <h1 className="font-regular text-7xl leading-tight text-black/90">
           <span className="">Elevate</span> {" "}
            your speech with {" "}
-          <span className="italic">
+          <span className="italic emphasis font-semibold">
             RTQlate
           </span>
         </h1>

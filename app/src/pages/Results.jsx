@@ -177,6 +177,8 @@ const Results = () => {
 
     const percentageContact = (localStorage.getItem("numGoodEyeContact")) / (localStorage.getItem("numGoodEyeContact") +  localStorage.getItem("numBadEyeContact"));
 
+    console.log('percentageContact', percentageContact);
+
     return (
         <div className="pt-32 mx-10 h-screen text-black/90">
             <div className="flex justify-center text-center">
@@ -200,7 +202,7 @@ const Results = () => {
             <div className="mx-20 text-center my-5 justify-content flex">
                 {/* change testWords to words before demo!!! */}
                 <p className="">
-                    {words.map((wordObj, index) => (
+                    {testWords.map((wordObj, index) => (
                         <span key={index} 
                                 className={wordObj.squiggle ? 'wavy' : ''}
                                 style={{ color: wordObj.color,  }}>
@@ -224,7 +226,7 @@ const Results = () => {
                 <ReactApexChart options={graphData.options} series={graphData.series} type="area" height={350} />
               </div> */}
               <div id="html-dist"></div>
-              <div className="flex justify-center text-center border border-neutral-300">
+              {/* <div className="flex justify-center text-center">
                 You spent
                 <br/>
                 {percentageContact ? (
@@ -239,7 +241,7 @@ const Results = () => {
                 }
                 <br/>
                 of the time maintaing good eye contact.
-              </div>
+              </div> */}
             </div>
         </div>
     );
