@@ -84,7 +84,10 @@ _(localhost:3000 by default)_
 
 
 ### Sneak Peak
+<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/a35c7558-0b19-4fc6-bc95-1db3769914c5" width="500px" style="pointer-events: none;"/>
+
 ![image](https://github.com/sophiiasun/RTQlit/assets/110139243/a35c7558-0b19-4fc6-bc95-1db3769914c5)
+![image](https://github.com/sophiiasun/RTQlit/assets/110139243/813f6d1a-c0b7-4853-891e-7088de21e47d)
 
 
 ## Next Steps
