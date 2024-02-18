@@ -41,6 +41,7 @@ RTQlate is a 5-feature speaking assistant and feedback provider:
   
 
 ## Architecture Overview
+![image](https://github.com/sophiiasun/RTQlit/assets/110139243/197e985e-ddce-4dc2-a95f-4f318188c99f)
 
 
 ## Getting Started
