@@ -74,7 +74,7 @@ _(127.0.0.1:5000 by default)_
 3. `source venv/bin/activate` (MacOS)
 4. `venv\Scripts\activate` (Windows Powershell)
 5. `pip install -r requirements.txt`
-6. `FLASK_APP=main.py flask run` (MaxOS)
+6. `FLASK_APP=main.py flask run` (MacOS)
 7. `flask run` (Windows Powershell)
 
 ### Starting the app
