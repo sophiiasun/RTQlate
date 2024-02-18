@@ -84,12 +84,12 @@ _(localhost:3000 by default)_
 
 
 ### Sneak Peak
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/a35c7558-0b19-4fc6-bc95-1db3769914c5" width="500px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/3318a4db-c5eb-4738-8b3e-9185c7ef8d53" width="500px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/6b7412c4-fe95-468b-a4fe-29cdad57066a" width="500px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/6f7e23d0-1ec1-4fac-8b23-b88a66bf53fa" width="500px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/50b8b41a-0119-4fd4-9b6e-c7265a9493e2" width="500px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/4f4cb04f-77f9-42ad-af64-762224c83b8a" width="500px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/a35c7558-0b19-4fc6-bc95-1db3769914c5" width="300px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/3318a4db-c5eb-4738-8b3e-9185c7ef8d53" width="300px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/6b7412c4-fe95-468b-a4fe-29cdad57066a" width="300px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/6f7e23d0-1ec1-4fac-8b23-b88a66bf53fa" width="300px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/50b8b41a-0119-4fd4-9b6e-c7265a9493e2" width="300px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/4f4cb04f-77f9-42ad-af64-762224c83b8a" width="300px" style="pointer-events: none;"/>
 
 
 
