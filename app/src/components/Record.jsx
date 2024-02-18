@@ -23,7 +23,9 @@ class Record extends React.Component {
     isRecording: false,
     recording: null,
     eyeContact: "",
-    gotResponse: false
+    gotResponse: false,
+    numGoodEyeContact: 0,
+    numBadEyeContact: 0,
   };
 
   horizontalRatio = [];
@@ -57,6 +59,8 @@ class Record extends React.Component {
       localStorage.setItem("recording_content_analysis", JSON.stringify(await response.data));
       localStorage.setItem("horizontalRatios", this.horizontalRatio);
       localStorage.setItem("verticalRatios", this.verticalRatio);
+      localStorage.setItem("numGoodEyeContact", this.state.numGoodEyeContact);
+      localStorage.setItem("numBadEyeContact", this.state.numBadEyeContact);
     } else {
       try {
         await recorder.initAudio();
@@ -70,8 +74,18 @@ class Record extends React.Component {
             this.setState({
               eyeContact: response.data.direction
             });
-            this.horizontalRatio.push(response.data.horizontalRatio);
-            this.verticalRatio.push(response.data.verticalRatio);
+            if (response.data.direction === "Looking center") {
+              this.setState(prevState => {
+                return { numGoodEyeContact: prevState.numGoodEyeContact + 1 };
+              });
+            }
+            else {
+              this.setState(prevState => {
+                return { numBadEyeContact: prevState.numBadEyeContact + 1 };
+              });
+            }
+            this.horizontalRatio.push(response.data.horizontal_ratio);
+            this.verticalRatio.push(response.data.vertical_ratio);
           }
           setTimeout(analyzeFrames, 500);
         }
@@ -117,7 +131,7 @@ class Record extends React.Component {
               </div>
             </>
             }
-          {isRecording && <p>Eye Contact Status: {this.state.eyeContact === "Looking center" ? "Good!" : "Face the camera :("}</p>}
+          {isRecording && <p>Eye Contact Status: {this.state.eyeContact === "Looking center" ? "Good eye contact!" : "Face the camera :("}</p>}
         </div>
       </>
     );

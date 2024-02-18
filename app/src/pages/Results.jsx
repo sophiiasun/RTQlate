@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import ReactApexChart from "apexcharts";
 import Record from '../components/Record';
 import EyeChart from '../components/EyeChart';
 
@@ -29,6 +30,96 @@ const Results = () => {
         console.error(e);
     }
     console.log(words);
+
+    const horizontalRatios = localStorage.getItem("horizontalRatios");
+    const verticalRatios = localStorage.getItem("verticalRatios");
+
+    const filteredData = [];
+    // console.log(horizontalRatios);
+    // console.log(verticalRatios);
+    for (let i = 0; i < horizontalRatios.length; i++) {
+        if (horizontalRatios[i] != "None" && verticalRatios[i] != "None" && !isNaN(parseInt(horizontalRatios[i]))) {
+            filteredData.push({x: i, y: parseInt(horizontalRatios[i])});
+        }
+    }
+    
+    const graphData = {
+        series: [{
+            name: 'south',
+            data: filteredData
+        }],
+        options: {
+            chart: {
+                type: 'area',
+                height: 350
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'straight'
+            },
+            
+            title: {
+                text: 'Area with Negative Values',
+                align: 'left',
+                style: {
+                fontSize: '14px'
+                }
+            },
+            xaxis: {
+                type: 'datetime',
+                axisBorder: {
+                show: false
+                },
+                axisTicks: {
+                show: false
+                }
+            },
+            yaxis: {
+                tickAmount: 4,
+                floating: false,
+            
+                labels: {
+                style: {
+                    colors: '#8e8da4',
+                },
+                offsetY: -7,
+                offsetX: 0,
+                },
+                axisBorder: {
+                show: false,
+                },
+                axisTicks: {
+                show: false
+                }
+            },
+            fill: {
+                opacity: 0.5
+            },
+            tooltip: {
+                x: {
+                format: "y",
+                },
+                fixed: {
+                enabled: false,
+                position: 'topRight'
+                }
+            },
+            grid: {
+                yaxis: {
+                lines: {
+                    offsetX: -30
+                }
+                },
+                padding: {
+                left: 20
+                }
+            }
+        },
+    };
+
+    console.log(graphData);
 
     return (
         <div className="pt-32 mx-10 h-screen text-black/90">
@@ -71,6 +162,12 @@ const Results = () => {
                     ))}
                 </p>
             </div>
+            </div>
+            <div>
+              {/* <div id="chart">
+                <ReactApexChart options={graphData.options} series={graphData.series} type="area" height={350} />
+              </div> */}
+              <div id="html-dist"></div>
             </div>
         </div>
     );
