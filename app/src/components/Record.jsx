@@ -20,8 +20,9 @@ class Record extends React.Component {
   state = {
     isLoading: false,
     isRecording: false,
-    recordings: [],
-    eyeContact: ""
+    recording: null,
+    eyeContact: "",
+    submitResponse: null
   };
 
   // componentDidUpdate(prevState) {
@@ -41,13 +42,13 @@ class Record extends React.Component {
       this.setState({
         isLoading: false,
         isRecording: false,
-        recordings: this.state.recordings.concat(URL.createObjectURL(blob))
+        recording: URL.createObjectURL(blob)
       });
       await axios.post(`${backendRootUrl}/stop-gaze-tracking`);
       const filename = `RTQlit_recording_${uuidv4()}.mp3`;
       download(URL.createObjectURL(blob), filename);
       const response = await axios.post(`${backendRootUrl}/submit`, {filename});
-      console.log(response);
+      this.setState({ submitResponse: response.data })
     } else {
       try {
         await recorder.initAudio();
@@ -71,23 +72,23 @@ class Record extends React.Component {
       }
     }
   };
+
+  handleNextPage() {
+
+  }
+
   render() {
-    const { isLoading, isRecording, recordings } = this.state;
+    const { isLoading, isRecording, recording } = this.state;
     return (
       <>
         <React.Fragment>
           <button disabled={isLoading} onClick={this.record} className="border rounded-full p-2 px-5 border-black my-4">
             {isRecording ? "Stop" : "Record"}
           </button>
-          {/* <ul style={{ listStyle: "none", padding: 0 }}>
-            {recordings.map((url) => (
-              <li key={url}>
-                <audio src={url} controls />
-              </li>
-            ))}
-          </ul> */}
+          {recording && <><button onclick={this.handleNextPage}>BIG BUTTOn</button><audio src={recording} controls /></>}
+          
         </React.Fragment>
-        <p>Eye Contact Status: {this.state.eyeContact}</p>
+        {isRecording && <p>Eye Contact Status: {this.state.eyeContact}</p>}
       </>
     );
   }
