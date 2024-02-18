@@ -19,7 +19,7 @@
     <br><br>
 </div>
 
-![image](https://github.com/sophiiasun/RTQlit/assets/110139243/91e34e7b-bcb8-4bfe-ad0e-bb94593f2e8d)
+![image](https://github.com/sophiiasun/RTQlate/assets/110139243/6e2a8fdd-ade5-4d0b-b6a5-75ac33a8fbc9)
 
 Fall is the time to get your shit together. It brings the academic pressures with the onset of the school year, as well as a new recruiting season! But since you were slacking off and relaxing in the summer, you now realize it's been a long long time since you last practiced your speaking skills. Suddenly the fall season is throwing all these school presentations, job interviews, and other super-important speaking situations right at you and you've forgotten how to articulate your words! Introducing... RTQlate! (AR-TI-CU-late)
 
@@ -88,12 +88,12 @@ _(localhost:3000 by default)_
 
 
 ### Sneak Peak
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/a35c7558-0b19-4fc6-bc95-1db3769914c5" width="400px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/3318a4db-c5eb-4738-8b3e-9185c7ef8d53" width="400px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/6b7412c4-fe95-468b-a4fe-29cdad57066a" width="400px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/6f7e23d0-1ec1-4fac-8b23-b88a66bf53fa" width="400px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/50b8b41a-0119-4fd4-9b6e-c7265a9493e2" width="400px" style="pointer-events: none;"/>
-<img src="https://github.com/sophiiasun/RTQlit/assets/110139243/4f4cb04f-77f9-42ad-af64-762224c83b8a" width="400px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlate/assets/110139243/c464b92a-4f75-48df-900b-c554a29962dc" width="400px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlate/assets/110139243/bbd87d34-4d6e-4095-8234-bcac63c078a7" width="400px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlate/assets/110139243/a31f8f51-8e22-40ed-a222-b9dfea9e6d1c" width="400px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlate/assets/110139243/b85f3eba-0b97-4d10-b883-2551c838442f" width="400px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlate/assets/110139243/2f6bc68f-4c96-4ca9-b8a7-39fdb53f73fe" width="400px" style="pointer-events: none;"/>
+<img src="https://github.com/sophiiasun/RTQlate/assets/110139243/392b9147-276c-425a-ac67-4081ca51294d" width="400px" style="pointer-events: none;"/>
 
 
 
