@@ -51,7 +51,7 @@ def submit():
   for i in range(5):
     print(f"Attempt {i}")
     try:
-      with open(os.path.abspath(f"../../../Downloads/{filename}") , "rb") as f:
+      with open(os.path.abspath(f"{os.path.expanduser('~')}/Downloads/{filename}"), "rb") as f:
         response = requests.post(base_url + "/upload", headers=headers, data=f)
         if response:
           break
