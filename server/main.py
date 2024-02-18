@@ -125,8 +125,8 @@ def analyze_frame():
     "direction": text, 
     "left_pupil": str(left_pupil), 
     "right_pupil": str(right_pupil),
-    "horizontal_ratio": gaze.horizontal_ratio(),
-    "vertial_ratio": gaze.vertical_ratio()
+    "horizontal_ratio": str(gaze.horizontal_ratio()),
+    "vertial_ratio": str(gaze.vertical_ratio())
   })
 
 @app.route("/stop-gaze-tracking", methods=['POST'])

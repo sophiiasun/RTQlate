@@ -30,61 +30,6 @@ const Results = () => {
     }
     console.log(words);
 
-    const testWords = [
-        {word: 'Transcribe', confidence: 0.73106, squiggle: false, color: 'red'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
-        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
-        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
-        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
-        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'test', confidence: 0.7718, squiggle: false, color: 'green'},
-        {word: 'and', confidence: 0.96, squiggle: false, color: ''},
-        {word: 'Joe', confidence: 0.52503, squiggle: true, color: ''},
-        {word: 'Biden.', confidence: 0.99833, squiggle: false, color: ''}
-    ];
-
     return (
         <div className="pt-32 mx-10 h-screen text-black/90">
             <div className="flex justify-center text-center">
@@ -108,7 +53,7 @@ const Results = () => {
             <div className="mx-20 text-center my-5 w-[50%]">
                 {/* change testWords to words before demo!!! */}
                 <p className="">
-                    {testWords.map((wordObj, index) => (
+                    {words.map((wordObj, index) => (
                         <span key={index} 
                                 className={wordObj.squiggle ? 'wavy' : ''}
                                 style={{ color: wordObj.color,  }}>

@@ -22,7 +22,8 @@ class Record extends React.Component {
     isLoading: false,
     isRecording: false,
     recording: null,
-    eyeContact: ""
+    eyeContact: "",
+    gotResponse: false
   };
 
   horizontalRatio = [];
@@ -52,6 +53,7 @@ class Record extends React.Component {
       localStorage.setItem("recorderFileName", filename);
       download(URL.createObjectURL(blob), filename);
       const response = await axios.post(`${backendRootUrl}/submit`, {filename});
+      this.setState({ gotResponse: true })
       localStorage.setItem("recording_content_analysis", JSON.stringify(await response.data));
       localStorage.setItem("horizontalRatios", this.horizontalRatio);
       localStorage.setItem("verticalRatios", this.verticalRatio);
@@ -86,7 +88,7 @@ class Record extends React.Component {
   }
 
   render() {
-    const { isLoading, isRecording, recording } = this.state;
+    const { isLoading, isRecording, recording, gotResponse } = this.state;
     return (
       <>
         <div className="flex justify-center">
@@ -100,7 +102,7 @@ class Record extends React.Component {
         </div>
         <div className="text-center">
           <br/>
-          {recording && 
+          {gotResponse && 
             <>
               <div className="text-center">
                 <div className="flex justify-center">
