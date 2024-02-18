@@ -62,7 +62,8 @@ def submit():
   upload_url = response.json()["upload_url"]
   data = {
     "audio_url": upload_url,
-    "auto_highlights": True
+    "auto_highlights": True,
+    "sentiment_analysis": True,
   }
   url = base_url + "/transcript"
   response = requests.post(url, json=data, headers=headers)
