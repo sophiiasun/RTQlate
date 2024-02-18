@@ -59,6 +59,10 @@ npm install
 ```
 OPENAI_API_KEY={YOUR_API_KEY}
 ```
+```
+FLASK_APP=main.py
+```
+
 
 ### Starting the server
 
@@ -70,8 +74,7 @@ _(127.0.0.1:5000 by default)_
 4. `venv\Scripts\activate` (Windows Powershell)
 5. `pip install -r requirements.txt`
 6. `FLASK_APP=main.py flask run` (MaxOS)
-7. `$env:FLASK_APP = "main.py"` (Windows Powershell)
-8. `flask run` (Windows Powershell)
+7. `flask run` (Windows Powershell)
 
 ### Starting the app
 
