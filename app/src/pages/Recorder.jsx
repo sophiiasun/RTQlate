@@ -3,7 +3,7 @@ import Record from '../components/Record';
 
 const TestPage = () => {
   return (
-    <div className="pt-28 mx-10">
+    <div className="pt-28 mx-10 h-screen">
       <Record></Record>
     </div>
   );
