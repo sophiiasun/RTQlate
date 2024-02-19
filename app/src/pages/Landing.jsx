@@ -65,12 +65,13 @@ const Landing = () => {
         <h1 className="font-regular text-7xl leading-tight text-black/90">
           <span className="">Elevate</span> {" "}
            your speech with {" "}
-          <span className="italic emphasis font-semibold">
+          <span className="italic emphasis
+            text-8xl py-6 bg-gradient-to-r from-blue-800 via-blue-600 to-pink-500 bg-clip-text text-transparent" style={{fontWeight:'600'}}>
             RTQlate
           </span>
         </h1>
         <p className="pb-14 text-black/90">
-          Master the art of speech with our app. 
+          Master the art of speech with RTQlate. 
           From pitch-perfect presentations to flawless interviews, 
           empower yourself to achieve professional victories with every word.
         </p>

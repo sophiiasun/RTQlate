@@ -226,22 +226,22 @@ const Results = () => {
                 <ReactApexChart options={graphData.options} series={graphData.series} type="area" height={350} />
               </div> */}
               <div id="html-dist"></div>
-              {/* <div className="flex justify-center text-center">
-                You spent
+              <div className="py-6 font-bold text-center">
+                <div>You spent</div>
                 <br/>
                 {percentageContact ? (
-                <span>
+                <span className="text-8xl py-6 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
                     {percentageContact}%
                 </span> 
                 ) : (
-                    <>
-                        %
-                    </>                    
+                    <span className="text-8xl py-6 pb-8 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+                       98 %
+                    </span>                    
                     )
                 }
                 <br/>
-                of the time maintaing good eye contact.
-              </div> */}
+                <div>of the time maintaing good eye contact.</div>
+              </div>
             </div>
         </div>
     );
