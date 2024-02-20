@@ -29,7 +29,6 @@ const Results = () => {
     } catch (e) {
         console.error(e);
     }
-    console.log(words);
 
     const testWords = [
         {word: 'Transcribe', confidence: 0.73106, squiggle: false, color: 'red'},
@@ -90,8 +89,6 @@ const Results = () => {
     const verticalRatios = localStorage.getItem("verticalRatios");
 
     const filteredData = [];
-    // console.log(horizontalRatios);
-    // console.log(verticalRatios);
     for (let i = 0; i < horizontalRatios.length; i++) {
         if (horizontalRatios[i] != "None" && verticalRatios[i] != "None" && !isNaN(parseInt(horizontalRatios[i]))) {
             filteredData.push({x: i, y: parseInt(horizontalRatios[i])});
@@ -174,11 +171,9 @@ const Results = () => {
         },
     };
 
-    console.log(graphData);
-
-    const percentageContact = Math.round(10000 * (localStorage.getItem("numGoodEyeContact")) / (localStorage.getItem("numGoodEyeContact") +  localStorage.getItem("numBadEyeContact"))) / 10;
-
-    console.log('percentageContact', percentageContact);
+    const numGoodEyeContact = Number(localStorage.getItem("numGoodEyeContact"));
+    const numBadEyeContact = Number(localStorage.getItem("numBadEyeContact"));
+    const percentageContact = Math.round(1000 * numGoodEyeContact / (numGoodEyeContact + numBadEyeContact)) / 10;
 
     return (
         <div className="pt-32 mx-10 h-screen text-black/90">

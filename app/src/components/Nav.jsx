@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   const { currentUser, loading } = useAuth();
 
-  console.log("currentUser", currentUser);
-
   return (
     <nav className="flex justify-between px-8 py-4 w-full fixed bg-white text-black/90">
       <ul className="flex space-x-4 list-none justify-evenly text-xl">

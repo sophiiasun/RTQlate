@@ -19,8 +19,6 @@ function LogInComponent() {
 
   const navigate = useNavigate();
 
-  console.log("currentUser (login page log msg): ", currentUser);
-
   useEffect(() => {
     // Redirect to setup page if user is already authenticated
     if (currentUser) {
