@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactApexChart from "apexcharts";
 import Record from '../components/Record';
+import '../App.css';
 
 const Results = () => {
     const transcript = JSON.parse(localStorage.getItem("recording_content_analysis")) || {};
@@ -175,7 +176,7 @@ const Results = () => {
 
     console.log(graphData);
 
-    const percentageContact = (localStorage.getItem("numGoodEyeContact")) / (localStorage.getItem("numGoodEyeContact") +  localStorage.getItem("numBadEyeContact"));
+    const percentageContact = Math.round(10000 * (localStorage.getItem("numGoodEyeContact")) / (localStorage.getItem("numGoodEyeContact") +  localStorage.getItem("numBadEyeContact"))) / 10;
 
     console.log('percentageContact', percentageContact);
 
