@@ -198,7 +198,7 @@ const Results = () => {
             <div className="mx-20 text-center my-5 justify-content flex">
                 {/* change testWords to words before demo!!! */}
                 <p className="">
-                    {testWords.map((wordObj, index) => (
+                    {words.map((wordObj, index) => (
                         <span key={index} 
                                 className={wordObj.squiggle ? 'wavy' : ''}
                                 style={{ color: wordObj.color,  }}>
